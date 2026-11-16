@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Shopping Cart Prototype</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🛒 E-Commerce Shopping Cart</h1>
+        
+        <h2>Product Catalogue</h2>
+        <div id="product-list" class="product-list">
+            <!-- Electronics Group (10% Discount) -->
+            <div class="product-card electronics">
+                <h3>🎧 Headphones</h3>
+                <p class="category">Electronics (10% Off)</p>
+                <p class="price">Price: ₹2,000</p>
+                <button onclick="addToCart('E01', 'Headphones', 2000, 'Electronics')">Add to Cart</button>
+            </div>
+            
+            <div class="product-card electronics">
+                <h3>💻 Laptop</h3>
+                <p class="category">Electronics (10% Off)</p>
+                <p class="price">Price: ₹45,000</p>
+                <button onclick="addToCart('E02', 'Laptop', 45000, 'Electronics')">Add to Cart</button>
+            </div>
+
+            <div class="product-card electronics">
+                <h3>📱 Smartphone</h3>
+                <p class="category">Electronics (10% Off)</p>
+                <p class="price">Price: ₹15,000</p>
+                <button onclick="addToCart('E03', 'Smartphone', 15000, 'Electronics')">Add to Cart</button>
+            </div>
+
+            <div class="product-card electronics">
+                <h3>⌚ Smartwatch</h3>
+                <p class="category">Electronics (10% Off)</p>
+                <p class="price">Price: ₹3,500</p>
+                <button onclick="addToCart('E04', 'Smartwatch', 3500, 'Electronics')">Add to Cart</button>
+            </div>
+        </div>
+
+        <div id="product-list-2" class="product-list">
+            <!-- Clothing Group (15% Discount) -->
+            <div class="product-card clothing">
+                <h3>👕 T-Shirt</h3>
+                <p class="category">Clothing (15% Off)</p>
+                <p class="price">Price: ₹500</p>
+                <button onclick="addToCart('C01', 'T-Shirt', 500, 'Clothing')">Add to Cart</button>
+            </div>
+
+            <div class="product-card clothing">
+                <h3>👖 Jeans</h3>
+                <p class="category">Clothing (15% Off)</p>
+                <p class="price">Price: ₹1,500</p>
+                <button onclick="addToCart('C02', 'Jeans', 1500, 'Clothing')">Add to Cart</button>
+            </div>
+
+            <div class="product-card clothing">
+                <h3>🧥 Jacket</h3>
+                <p class="category">Clothing (15% Off)</p>
+                <p class="price">Price: ₹2,500</p>
+                <button onclick="addToCart('C03', 'Jacket', 2500, 'Clothing')">Add to Cart</button>
+            </div>
+        </div>
+
+        <h2>Shopping Cart Items</h2>
+        <table id="cart-table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Category</th>
+                    <th>Unit Price</th>
+                    <th>Quantity</th>
+                    <th>Line Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <div id="cart-summary">
+            <p id="empty-message">Your cart is currently empty.</p>
+            <div class="bill-details" id="bill-details" style="display: none;">
+                <p>Subtotal: ₹<span id="subtotal-val">0.00</span></p>
+                <p>Category Discount: -₹<span id="discount-val">0.00</span></p>
+                <hr>
+                <h3>Final Payable Amount: ₹<span id="total-price">0.00</span></h3>
+                <button class="checkout-btn" onclick="checkoutOrder()">🔒 Place Order (Simulation)</button>
+            </div>
+        </div>
+        
+        <div id="order-success" class="success-box" style="display: none;">
+            <h3>🎉 Order Placed Successfully!</h3>
+            <p>Order ID: <strong id="res-order-id"></strong></p>
+            <p>Payment Status: <strong>PAID (Simulated)</strong></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
